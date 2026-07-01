@@ -23,6 +23,16 @@ const PROJECTS = [
     color: "#ffffff",
   },
   {
+    id: "jack",
+    title: "JACK",
+    subtitle: "3D Creator Portfolio",
+    description: "A dark-themed 3D creator portfolio with scroll-driven marquee, magnetic portrait, and sticky card projects.",
+    icon: Sparkles,
+    available: true,
+    path: "/jack",
+    color: "#B600A8",
+  },
+  {
     id: "project-2",
     title: "PROJECT ALPHA",
     subtitle: "Interactive Experience",

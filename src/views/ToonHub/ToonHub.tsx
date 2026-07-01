@@ -1,10 +1,10 @@
 import { useState, useEffect, useCallback } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
-import img1 from "../assets/images/toonhub/1.png";
-import img2 from "../assets/images/toonhub/2.png";
-import img3 from "../assets/images/toonhub/3.png";
-import img4 from "../assets/images/toonhub/4.png";
+import img1 from "../../assets/images/toonhub/1.png";
+import img2 from "../../assets/images/toonhub/2.png";
+import img3 from "../../assets/images/toonhub/3.png";
+import img4 from "../../assets/images/toonhub/4.png";
 
 const IMAGES = [
   { src: img1, bg: "#F4845F", panel: "#F79B7F" },
