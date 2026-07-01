@@ -11,7 +11,6 @@ const NAV_LINKS = [
 export default function FoldCraft() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Scroll lock when mobile menu is open
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -46,22 +45,21 @@ export default function FoldCraft() {
         />
       </video>
 
-      {/* Dark overlay for readability */}
-      <div className="absolute inset-0 bg-black/40" />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/50" />
 
       {/* Navbar */}
-      <nav className="relative z-30 flex items-center justify-between px-6 py-5 md:px-12 lg:px-16">
-        {/* Left: Logo + Desktop Links */}
+      <nav className="relative z-30 flex items-center justify-between px-5 pt-6 pb-4 md:px-12 lg:px-16 md:pt-8 md:pb-5">
         <div className="flex items-center gap-8">
-          <span className="text-lg font-semibold tracking-tight text-white sm:text-xl">
+          <span className="text-base sm:text-lg md:text-xl font-semibold tracking-tight text-white">
             Foldcraft
           </span>
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-8">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="text-sm text-white/80 hover:text-white transition-colors"
+                className="text-[15px] text-white/70 hover:text-white transition-colors"
               >
                 {link.label}
               </a>
@@ -69,23 +67,19 @@ export default function FoldCraft() {
           </div>
         </div>
 
-        {/* Right: Desktop CTA + Mobile Hamburger */}
         <div className="flex items-center gap-4">
-          {/* Desktop CTA */}
           <a
             href="#"
-            className="hidden md:inline-flex rounded-lg bg-white px-5 py-2 text-sm font-medium text-black hover:scale-105 transition-transform"
+            className="hidden md:inline-flex rounded-lg bg-white px-6 py-3 text-sm font-semibold text-black hover:scale-105 transition-transform"
           >
-            Let's Talk
+            Let&apos;s Talk
           </a>
 
-          {/* Mobile Hamburger */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="relative z-50 md:hidden flex items-center justify-center w-10 h-10 active:scale-90"
+            className="relative z-50 md:hidden flex items-center justify-center w-11 h-11 active:scale-90"
             aria-label="Toggle menu"
           >
-            {/* Menu icon */}
             <div
               className="absolute inset-0 flex items-center justify-center transition-all duration-300"
               style={{
@@ -95,9 +89,8 @@ export default function FoldCraft() {
                   : "rotate(0deg) scale(1)",
               }}
             >
-              <Menu size={22} className="text-white" />
+              <Menu size={24} className="text-white" />
             </div>
-            {/* X icon */}
             <div
               className="absolute inset-0 flex items-center justify-center transition-all duration-300"
               style={{
@@ -107,13 +100,13 @@ export default function FoldCraft() {
                   : "rotate(-90deg) scale(0.5)",
               }}
             >
-              <X size={22} className="text-white" />
+              <X size={24} className="text-white" />
             </div>
           </button>
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu */}
       <div
         className="fixed inset-x-0 top-0 z-20 bg-black/98 backdrop-blur-xl transition-all duration-500"
         style={{
@@ -127,19 +120,17 @@ export default function FoldCraft() {
           <div
             className="transition-all duration-500 delay-100"
             style={{
-              transform: mobileMenuOpen
-                ? "translateY(0)"
-                : "translateY(2rem)",
+              transform: mobileMenuOpen ? "translateY(0)" : "translateY(2rem)",
               opacity: mobileMenuOpen ? 1 : 0,
             }}
           >
-            <nav className="flex flex-col gap-4">
+            <nav className="flex flex-col gap-5">
               {NAV_LINKS.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-3xl font-medium text-white/90 hover:text-white transition-colors"
+                  className="text-[28px] md:text-3xl font-medium text-white/90 hover:text-white transition-colors"
                 >
                   {link.label}
                 </a>
@@ -148,43 +139,43 @@ export default function FoldCraft() {
             <a
               href="#"
               onClick={() => setMobileMenuOpen(false)}
-              className="mt-6 inline-block rounded-full bg-white px-8 py-3.5 text-base font-medium text-black hover:scale-105 transition-transform"
+              className="mt-8 inline-block rounded-full bg-white px-10 py-4 text-[17px] font-medium text-black hover:scale-105 transition-transform"
             >
-              Let's Talk
+              Let&apos;s Talk
             </a>
           </div>
         </div>
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 flex flex-col justify-between h-[calc(100vh-80px)] px-6 pb-10 pt-12 sm:pb-12 sm:pt-16 md:px-12 md:pb-16 md:pt-20 lg:px-16">
-        {/* Top Section */}
+      <div className="relative z-10 flex flex-col justify-between h-[calc(100vh-76px)] md:h-[calc(100vh-84px)] px-5 pb-8 pt-5 sm:pb-12 sm:pt-10 md:px-12 md:pb-16 md:pt-20 lg:px-16">
+        {/* Top */}
         <div className="max-w-3xl">
-          {/* Badge */}
-          <p className="animate-[fadeSlideUp_0.8s_ease_0.2s_both] text-xs sm:text-sm text-white/90 mb-4 sm:mb-6">
+          <p className="animate-[fadeSlideUp_0.8s_ease_0.2s_both] text-[11px] sm:text-xs md:text-sm tracking-[0.15em] text-white/80 mb-3 sm:mb-4 md:mb-6">
             Brand & Visual Storytelling
           </p>
 
-          {/* Heading */}
-          <h1 className="animate-[fadeSlideUp_0.8s_ease_0.4s_both] text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-medium leading-[1.1] tracking-tight text-white">
-            Shaping visual / narratives,<br /> one pixel at a time.
+          <h1 className="animate-[fadeSlideUp_0.8s_ease_0.4s_both] text-[32px] leading-[1.15] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium tracking-tight text-white">
+            Shaping visual /<br className="hidden sm:block" /> narratives,{" "}
+            <br className="sm:hidden" />
+            one pixel
+            <br className="hidden sm:block" /> at a time.
           </h1>
         </div>
 
-        {/* Bottom Section */}
+        {/* Bottom */}
         <div>
-          <p className="animate-[fadeSlideUp_0.8s_ease_0.7s_both] text-sm sm:text-base md:text-lg leading-relaxed text-white/60 max-w-sm sm:max-w-lg mb-5 sm:mb-6">
+          <p className="animate-[fadeSlideUp_0.8s_ease_0.7s_both] text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed sm:leading-relaxed text-white/60 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mb-4 sm:mb-5 md:mb-6">
             Turning vision into reality through craft, motion, and an endless
             pursuit of beauty.
           </p>
 
-          {/* CTA Button */}
           <a
             href="#"
-            className="animate-[fadeSlideUp_0.8s_ease_0.9s_both] inline-flex items-center gap-2 rounded-lg bg-white px-5 py-2.5 sm:px-6 sm:py-3 text-sm font-medium text-black hover:scale-105 transition-transform"
+            className="animate-[fadeSlideUp_0.8s_ease_0.9s_both] inline-flex items-center gap-2.5 rounded-lg bg-white px-7 py-3.5 sm:px-7 sm:py-3.5 md:px-8 md:py-4 text-[15px] sm:text-[15px] md:text-base font-semibold text-black hover:scale-105 transition-transform"
           >
             Explore Work
-            <ArrowRight size={16} />
+            <ArrowRight size={16} className="sm:size-[18px]" />
           </a>
         </div>
       </div>
