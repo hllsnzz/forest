@@ -1,4 +1,4 @@
-﻿import { ArrowRight, Sparkles, Box, LayoutGrid, Target } from "lucide-react";
+import { ArrowRight, Sparkles, Box, LayoutGrid, Target } from "lucide-react";
 
 const PROJECTS = [
   {
@@ -11,6 +11,16 @@ const PROJECTS = [
     available: true,
     path: "/toonhub",
     color: "#F4845F",
+  },
+  {
+    id: "foldcraft",
+    title: "FOLDCRAFT",
+    subtitle: "Creative Studio Hero Landing",
+    description: "A fullscreen hero landing page with looping video background, responsive navbar, and staggered animations.",
+    icon: Sparkles,
+    available: true,
+    path: "/foldcraft",
+    color: "#ffffff",
   },
   {
     id: "project-2",
