@@ -16,7 +16,8 @@ const PROJECTS = [
     id: "foldcraft",
     title: "FOLDCRAFT",
     subtitle: "Creative Studio Hero Landing",
-    description: "A fullscreen hero landing page with looping video background, responsive navbar, and staggered animations.",
+    description:
+      "A fullscreen hero landing page with looping video background, responsive navbar, and staggered animations.",
     icon: Sparkles,
     available: true,
     path: "/foldcraft",
@@ -26,11 +27,23 @@ const PROJECTS = [
     id: "jack",
     title: "JACK",
     subtitle: "3D Creator Portfolio",
-    description: "A dark-themed 3D creator portfolio with scroll-driven marquee, magnetic portrait, and sticky card projects.",
+    description:
+      "A dark-themed 3D creator portfolio with scroll-driven marquee, magnetic portrait, and sticky card projects.",
     icon: Sparkles,
     available: true,
     path: "/jack",
     color: "#B600A8",
+  },
+  {
+    id: "portfolio",
+    title: "PORTFOLIO",
+    subtitle: "Michael Smith -- Dark Portfolio",
+    description:
+      "A single-page dark portfolio landing page with GSAP animations, HLS video, sticky project cards, and a full-screen loading intro.",
+    icon: Sparkles,
+    available: true,
+    path: "/portfolio",
+    color: "#6BBF7A",
   },
   {
     id: "project-2",
@@ -41,7 +54,7 @@ const PROJECTS = [
     icon: LayoutGrid,
     available: false,
     path: "",
-    color: "#6BBF7A",
+    color: "#6EB5FF",
   },
   {
     id: "project-3",
@@ -249,18 +262,15 @@ export default function Home({ onNavigate }: HomeProps) {
                 onMouseEnter={(e) => {
                   if (!isAvailable) return;
                   e.currentTarget.style.transform = "translateY(-3px)";
-                  e.currentTarget.style.background =
-                    "rgba(255,255,255,0.04)";
-                  e.currentTarget.style.borderColor =
-                    "rgba(255,255,255,0.12)";
+                  e.currentTarget.style.background = "rgba(255,255,255,0.04)";
+                  e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = "translateY(0)";
                   e.currentTarget.style.background = isAvailable
                     ? "rgba(255,255,255,0.025)"
                     : "rgba(255,255,255,0.01)";
-                  e.currentTarget.style.borderColor =
-                    "rgba(255,255,255,0.06)";
+                  e.currentTarget.style.borderColor = "rgba(255,255,255,0.06)";
                 }}
               >
                 {/* Color accent bar */}

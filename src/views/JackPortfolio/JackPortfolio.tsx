@@ -1,4 +1,5 @@
-﻿import { useEffect, useRef, useState } from "react";
+import "./jack.css";
+import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
   FadeIn,

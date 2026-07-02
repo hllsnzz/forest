@@ -1,4 +1,5 @@
-﻿import { useState, useEffect } from "react";
+import "./foldcraft.css";
+import { useState, useEffect } from "react";
 import { ArrowRight, Menu, X } from "lucide-react";
 
 const NAV_LINKS = [

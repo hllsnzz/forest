@@ -1,53 +1,36 @@
-Create a fullscreen hero landing page for a creative studio called "Foldcraft" using React, Tailwind CSS, and Lucide React icons. The page is a single viewport-height section with a looping background video, a responsive navbar, a mobile menu, and staggered-animated hero text.
-Video Background:
+Build a single full-viewport hero section in React + TypeScript + Vite + Tailwind CSS, using lucide-react for icons. The component is a character-figurine carousel called "TOONHUB".
+Fonts (load in index.html head):
 
-- URL: https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260622_204221_5339e40b-e73d-4ab0-9c65-79c18c66fd50.mp4
-- Attributes: autoPlay, muted, loop, playsInline
-- Styling: absolute positioned, full width/height, object-cover, object-position at 70% horizontal center
-- The video sits behind all content (no z-index or z-0)
-  Font:
-- Google Fonts: Geist (weights 300-700), loaded via <link> in index.html
-- Tailwind config extends fontFamily with geist: ['Geist', 'sans-serif']
-- Applied as font-geist on the root container
-- Body CSS: -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale
-  Root Container:
-- relative h-screen w-full overflow-hidden bg-black font-geist
-  Navbar (z-30):
-- Flex, space-between, padding: px-6 py-5 md:px-12 lg:px-16
-- Left side: Logo text "Foldcraft" (text-lg font-semibold tracking-tight text-white sm:text-xl) followed by desktop nav links (hidden on mobile, flex on md+)
-- Nav links: Home, Projects, Studio, Reach Us (text-sm text-white/80 hover:text-white transition-colors)
-- Right side (desktop): "Let's Talk" button (rounded-lg bg-white px-5 py-2 text-sm font-medium text-black hover:scale-105 transition-transform)
-- Right side (mobile): hamburger toggle button (40x40, z-50) with animated Menu/X icons from lucide-react. Menu rotates 90deg out and X rotates in with opacity and scale transitions (duration-300). Button has active:scale-90.
-  Mobile Menu (z-20):
-- Absolute, inset-x-0 top-0, full-screen overlay with bg-black/98 backdrop-blur-xl
-- Transition: duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] toggling between h-screen opacity-100 and h-0 opacity-0 pointer-events-none
-- Inner content: centered vertically (flex h-full flex-col justify-center px-8), with a delayed fade + translate animation (delay-100, translate-y-8)
-- Links: Home, Projects, Studio, Reach Us (text-3xl font-medium text-white/90 hover:text-white)
-- Button: "Let's Talk" (mt-6 rounded-full bg-white px-8 py-3.5 text-base font-medium text-black hover:scale-105)
-- All links/button call setMobileMenuOpen(false) on click
-  Hero Content (z-10):
-- Flex column, justify-between, fills remaining height: h-[calc(100vh-80px)]
-- Padding: px-6 pb-10 pt-12 sm:pb-12 sm:pt-16 md:px-12 md:pb-16 md:pt-20 lg:px-16
-  Top Section (max-w-3xl):
-- Badge: "Brand & Visual Storytelling" (text-xs sm:text-sm text-white/90), with animate-[fadeSlideUp_0.8s_ease_0.2s_both], margin-bottom 4 (sm:6)
-- Heading h1: "Shaping visual / narratives, / one pixel at a time." with <br/> line breaks - Sizing: text-3xl sm:text-5xl md:text-6xl lg:text-7xl - Style: font-medium leading-[1.1] tracking-tight text-white - Animation: animate-[fadeSlideUp_0.8s_ease_0.4s_both]
-  Bottom Section:
-- Paragraph: "Turning vision into reality through craft, motion, and an endless pursuit of beauty."
-  - Style: text-sm sm:text-base md:text-lg leading-relaxed text-white/60 max-w-sm sm:max-w-lg mb-5 sm:mb-6
-  - Animation: animate-[fadeSlideUp_0.8s_ease_0.7s_both]
-- CTA Button: "Explore Work" with ArrowRight icon (size 16) - Style: rounded-lg bg-white px-5 py-2.5 sm:px-6 sm:py-3 text-sm font-medium text-black hover:scale-105 transition-transform inline-flex items-center gap-2 - Animation: animate-[fadeSlideUp_0.8s_ease_0.9s_both]
-  CSS Animation (in index.css):
-  @keyframes fadeSlideUp {
-  from {
-  opacity: 0;
-  transform: translateY(24px);
-  }
-  to {
-  opacity: 1;
-  transform: translateY(0);
-  }
-  }
-  CSS Reset (in index.css):
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-  Dependencies: React, lucide-react (ArrowRight, Menu, X), Tailwind CSS, Google Fonts Geist.
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+Body font: 'Inter', sans-serif. Display font (huge ghost text + bottom-right link): 'Anton', sans-serif.
+Image data (4 items, exact URLs and colors):
+const IMAGES = [
+  { src: 'https://fifth-gentle-45902158.figma.site/_components/v2/4de492f6d9cf8244ad5293233e5c6f52407d42fc/1.02464a56.png', bg: '#F4845F', panel: '#F79B7F' },
+  { src: 'https://fifth-gentle-45902158.figma.site/_components/v2/4de492f6d9cf8244ad5293233e5c6f52407d42fc/2.b977faab.png', bg: '#6BBF7A', panel: '#85CC92' },
+  { src: 'https://fifth-gentle-45902158.figma.site/_components/v2/4de492f6d9cf8244ad5293233e5c6f52407d42fc/3.4df853b4.png', bg: '#E882B4', panel: '#ED9DC4' },
+  { src: 'https://fifth-gentle-45902158.figma.site/_components/v2/4de492f6d9cf8244ad5293233e5c6f52407d42fc/4.4457fbce.png', bg: '#6EB5FF', panel: '#8DC4FF' },
+];
+Preload all 4 images on mount via new Image().
+State & logic:
+- activeIndex (0–3), isAnimating boolean lock, isMobile (window.innerWidth < 640, updated on resize).
+- navigate('next' | 'prev'): ignore if animating; set isAnimating=true; bump activeIndex (prev+1)%4 or (prev+3)%4; release lock after 650ms.
+- Roles derived from activeIndex: center=activeIndex, left=(activeIndex+3)%4, right=(activeIndex+1)%4, back=(activeIndex+2)%4.
+Layout structure: Outer <div> has backgroundColor: IMAGES[activeIndex].bg, transition background-color 650ms cubic-bezier(0.4,0,0.2,1), fontFamily: 'Inter, sans-serif', relative w-full overflow-hidden. Inside, a relative w-full div with height: 100vh; overflow: hidden.
+1. Grain overlay (absolute inset-0 pointer-events-none, zIndex 50): SVG fractalNoise data URI, baseFrequency=0.9, numOctaves=4, opacity 0.08 inside SVG, container opacity: 0.4, backgroundSize: 200px 200px, repeat.
+2. Giant ghost text "3D SHAPE" (absolute inset-x-0 flex items-center justify-center pointer-events-none select-none, zIndex 2, top: 18%): font Anton, fontSize: clamp(90px, 28vw, 380px), weight 900, color white, opacity 1, lineHeight 1, uppercase, letterSpacing -0.02em, whiteSpace nowrap.
+3. Top-left brand label "TOONHUB" (absolute top-6 left-4 sm:left-8, zIndex 60): text-xs font-semibold uppercase, white, opacity 0.9, letterSpacing 0.18em.
+4. Carousel (absolute inset-0, zIndex 3): map all 4 IMAGES; each item is position:absolute, aspectRatio: '0.6 / 1', with role-based styles below. Inside, an <img> width:100%; height:100%; objectFit:contain; objectPosition:bottom center; draggable=false.
+Per-role style:
+- center: transform: translateX(-50%) scale(${isMobile?1.25:1.68}), no blur, opacity 1, zIndex 20, left:50%, height: isMobile?'60%':'92%', bottom: isMobile?'22%':0.
+- left: translateX(-50%) scale(1), blur 2px, opacity 0.85, zIndex 10, left: isMobile?'20%':'30%', height: isMobile?'16%':'28%', bottom: isMobile?'32%':'12%'.
+- right: same as left but left: isMobile?'80%':'70%'.
+- back: translateX(-50%) scale(1), blur 4px, opacity 1, zIndex 5, left:50%, height: isMobile?'13%':'22%', bottom: isMobile?'32%':'12%'.
+Transition on each item: transform 650ms cubic-bezier(0.4,0,0.2,1), filter 650ms ..., opacity 650ms ..., left 650ms .... willChange: transform, filter, opacity.
+1. Bottom-left text + nav buttons (absolute bottom-6 left-4 sm:bottom-20 sm:left-24, zIndex 60, maxWidth:320px):
+    - <p> "TOONHUB FIGURINES" — bold uppercase, tracking-widest, mb-2 sm:mb-3 text-base sm:text-[22px], white, opacity 0.95, letterSpacing 0.02em.
+    - <p> (hidden on mobile, hidden sm:block): "The artwork is stunning, shipped fully prepared. The finish is a vision, the 3D craft is flawless. Many thanks! Wishing you the win. Order now." — text-xs sm:text-sm, white, opacity 0.85, lineHeight 1.6, mb-4 sm:mb-5.
+    - Two circular buttons (w-12 h-12 sm:w-16 sm:h-16, transparent bg, 2px white border, white icon): ArrowLeft and ArrowRight from lucide-react, size 26, strokeWidth 2.25. On hover: scale 1.08 + bg rgba(255,255,255,0.12). Transition transform 150ms, background-color 150ms. Click triggers navigate('prev') / navigate('next').
+2. Bottom-right link "DISCOVER IT" (absolute bottom-6 right-4 sm:bottom-20 sm:right-10, zIndex 60): <a> flex items-center, font Anton, fontSize: clamp(20px, 4vw, 56px), weight 400, white, opacity 0.95→1 on hover (200ms), letterSpacing -0.02em, lineHeight 1, uppercase, no underline. Followed by ArrowRight (w-5 h-5 sm:w-8 sm:h-8, strokeWidth 2.25).
+Behavior summary: clicking arrows rotates roles; background color, image positions, scales, blurs, and opacities all crossfade simultaneously over 650ms with cubic-bezier(0.4,0,0.2,1). The character images sit at the bottom of the screen overlapping the giant "3D SHAPE" text behind them.

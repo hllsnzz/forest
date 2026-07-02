@@ -1,31 +1,21 @@
-﻿@import "tailwindcss";
+@import "tailwindcss";
 
 @layer base {
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html, body, #root {
-    background-color: #0C0C0C;
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
 }
 
 @theme {
   --font-geist: "Geist", sans-serif;
   --font-kanit: "Kanit", sans-serif;
-}
-
-.hero-heading {
-  background: linear-gradient(180deg, #646973 0%, #BBCCD7 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-@keyframes fadeSlideUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  --font-body: "Inter", sans-serif;
+  --font-display: "Instrument Serif", serif;
+  --color-bg: hsl(var(--bg));
+  --color-surface: hsl(var(--surface));
+  --color-text-primary: hsl(var(--text));
+  --color-muted: hsl(var(--muted));
+  --color-stroke: hsl(var(--stroke));
 }
