@@ -1,11 +1,12 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import Home from "./pages/Home.tsx";
 import ToonHub from "./views/ToonHub/ToonHub.tsx";
 import FoldCraft from "./views/FoldCraft/FoldCraft.tsx";
 import JackPortfolio from "./views/JackPortfolio/JackPortfolio.tsx";
 import Portfolio from "./views/Portfolio/Portfolio.tsx";
+import ViktorOddy from "./views/ViktorOddy/ViktorOddy.tsx";
 
-type Page = "home" | "toonhub" | "foldcraft" | "jack" | "portfolio";
+type Page = "home" | "toonhub" | "foldcraft" | "jack" | "portfolio" | "viktor";
 
 export default function App() {
   const [page, setPage] = useState<Page>("home");
@@ -15,6 +16,7 @@ export default function App() {
     else if (path === "/foldcraft") setPage("foldcraft");
     else if (path === "/jack") setPage("jack");
     else if (path === "/portfolio") setPage("portfolio");
+    else if (path === "/viktor") setPage("viktor");
     else setPage("home");
   };
 
@@ -27,6 +29,7 @@ export default function App() {
       {page === "foldcraft" && <FoldCraft />}
       {page === "jack" && <JackPortfolio />}
       {page === "portfolio" && <Portfolio />}
+      {page === "viktor" && <ViktorOddy />}
     </>
   );
 }

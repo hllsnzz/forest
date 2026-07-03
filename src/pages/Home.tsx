@@ -46,6 +46,17 @@ const PROJECTS = [
     color: "#6BBF7A",
   },
   {
+    id: "viktor",
+    title: "VIKTOR ODDY",
+    subtitle: "Creative Design Studio",
+    description:
+      "A single-page landing page for a creative design studio with marquee, pricing cards, testimonial carousel, and interactive partner section.",
+    icon: Sparkles,
+    available: true,
+    path: "/viktor",
+    color: "#0D212C",
+  },
+  {
     id: "project-2",
     title: "PROJECT ALPHA",
     subtitle: "Interactive Experience",
@@ -54,7 +65,7 @@ const PROJECTS = [
     icon: LayoutGrid,
     available: false,
     path: "",
-    color: "#6EB5FF",
+    color: "#6BBF7A",
   },
   {
     id: "project-3",
