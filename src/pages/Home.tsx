@@ -57,6 +57,17 @@ const PROJECTS = [
     color: "#0D212C",
   },
   {
+    id: "lithos",
+    title: "LITHOS",
+    subtitle: "Geology Brand Hero — Spotlight Reveal",
+    description:
+      "A full-screen dark hero section for a geology brand with cursor-following spotlight reveal, canvas mask, and animated typography.",
+    icon: Sparkles,
+    available: true,
+    path: "/lithos",
+    color: "#e8702a",
+  },
+  {
     id: "project-2",
     title: "PROJECT ALPHA",
     subtitle: "Interactive Experience",
