@@ -79,6 +79,17 @@ const PROJECTS = [
     color: "#ffffff",
   },
   {
+    id: "prisma",
+    title: "PRISMA",
+    subtitle: "Creative Studio Landing Page",
+    description:
+      "A dark cinematic landing page for a creative studio with video backgrounds, noise overlays, pull-up text animations, and scroll-driven letter reveals.",
+    icon: Sparkles,
+    available: true,
+    path: "/prisma",
+    color: "#DEDBC8",
+  },
+  {
     id: "project-2",
     title: "PROJECT ALPHA",
     subtitle: "Interactive Experience",

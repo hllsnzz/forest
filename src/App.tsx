@@ -7,8 +7,9 @@ import Portfolio from "./views/Portfolio/Portfolio.tsx";
 import ViktorOddy from "./views/ViktorOddy/ViktorOddy.tsx";
 import Lithos from "./views/Lithos/Lithos.tsx";
 import SynapseX from "./views/SynapseX/SynapseX.tsx";
+import Prisma from "./views/Prisma/Prisma.tsx";
 
-type Page = "home" | "toonhub" | "foldcraft" | "jack" | "portfolio" | "viktor" | "lithos" | "synapse";
+type Page = "home" | "toonhub" | "foldcraft" | "jack" | "portfolio" | "viktor" | "lithos" | "synapse" | "prisma";
 
 export default function App() {
   const [page, setPage] = useState<Page>("home");
@@ -21,6 +22,7 @@ export default function App() {
     else if (path === "/viktor") setPage("viktor");
     else if (path === "/lithos") setPage("lithos");
     else if (path === "/synapse") setPage("synapse");
+    else if (path === "/prisma") setPage("prisma");
     else setPage("home");
   };
 
@@ -36,6 +38,7 @@ export default function App() {
       {page === "viktor" && <ViktorOddy />}
       {page === "lithos" && <Lithos />}
       {page === "synapse" && <SynapseX />}
+      {page === "prisma" && <Prisma />}
     </>
   );
 }
