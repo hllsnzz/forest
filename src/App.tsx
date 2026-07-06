@@ -6,8 +6,9 @@ import JackPortfolio from "./views/JackPortfolio/JackPortfolio.tsx";
 import Portfolio from "./views/Portfolio/Portfolio.tsx";
 import ViktorOddy from "./views/ViktorOddy/ViktorOddy.tsx";
 import Lithos from "./views/Lithos/Lithos.tsx";
+import SynapseX from "./views/SynapseX/SynapseX.tsx";
 
-type Page = "home" | "toonhub" | "foldcraft" | "jack" | "portfolio" | "viktor" | "lithos";
+type Page = "home" | "toonhub" | "foldcraft" | "jack" | "portfolio" | "viktor" | "lithos" | "synapse";
 
 export default function App() {
   const [page, setPage] = useState<Page>("home");
@@ -19,6 +20,7 @@ export default function App() {
     else if (path === "/portfolio") setPage("portfolio");
     else if (path === "/viktor") setPage("viktor");
     else if (path === "/lithos") setPage("lithos");
+    else if (path === "/synapse") setPage("synapse");
     else setPage("home");
   };
 
@@ -33,6 +35,7 @@ export default function App() {
       {page === "portfolio" && <Portfolio />}
       {page === "viktor" && <ViktorOddy />}
       {page === "lithos" && <Lithos />}
+      {page === "synapse" && <SynapseX />}
     </>
   );
 }

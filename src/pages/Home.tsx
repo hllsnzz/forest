@@ -68,6 +68,17 @@ const PROJECTS = [
     color: "#e8702a",
   },
   {
+    id: "synapse",
+    title: "SYNAPSEX",
+    subtitle: "Neural-AI Interface Product",
+    description:
+      "A single-page landing site for a futuristic neural-AI interface with mouse-scrubbed video, scroll-driven 3D text, and scramble text animations.",
+    icon: Sparkles,
+    available: true,
+    path: "/synapse",
+    color: "#ffffff",
+  },
+  {
     id: "project-2",
     title: "PROJECT ALPHA",
     subtitle: "Interactive Experience",
