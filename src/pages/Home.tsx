@@ -101,6 +101,17 @@ const PROJECTS = [
     color: "#5E6470",
   },
   {
+    id: "mainframe",
+    title: "MAINFRAME",
+    subtitle: "Interactive Hero — Typewriter + Scrub Video",
+    description:
+      "A modern interactive hero with scrubbable video, typewriter headline, multi-select service pills, and dynamic feedback banner.",
+    icon: Sparkles,
+    available: true,
+    path: "/mainframe",
+    color: "#1C2E1E",
+  },
+  {
     id: "project-2",
     title: "PROJECT ALPHA",
     subtitle: "Interactive Experience",
