@@ -90,6 +90,17 @@ const PROJECTS = [
     color: "#DEDBC8",
   },
   {
+    id: "rivr",
+    title: "RIVR",
+    subtitle: "DeFi Dashboard Hero — Glassmorphism",
+    description:
+      "A sleek glassmorphism hero section for a DeFi dashboard with video background, animated badges, corner cutout panel, and premium UI.",
+    icon: Sparkles,
+    available: true,
+    path: "/rivr",
+    color: "#5E6470",
+  },
+  {
     id: "project-2",
     title: "PROJECT ALPHA",
     subtitle: "Interactive Experience",

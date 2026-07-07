@@ -8,8 +8,9 @@ import ViktorOddy from "./views/ViktorOddy/ViktorOddy.tsx";
 import Lithos from "./views/Lithos/Lithos.tsx";
 import SynapseX from "./views/SynapseX/SynapseX.tsx";
 import Prisma from "./views/Prisma/Prisma.tsx";
+import RIVR from "./views/RIVR/RIVR.tsx";
 
-type Page = "home" | "toonhub" | "foldcraft" | "jack" | "portfolio" | "viktor" | "lithos" | "synapse" | "prisma";
+type Page = "home" | "toonhub" | "foldcraft" | "jack" | "portfolio" | "viktor" | "lithos" | "synapse" | "prisma" | "rivr";
 
 export default function App() {
   const [page, setPage] = useState<Page>("home");
@@ -23,6 +24,7 @@ export default function App() {
     else if (path === "/lithos") setPage("lithos");
     else if (path === "/synapse") setPage("synapse");
     else if (path === "/prisma") setPage("prisma");
+    else if (path === "/rivr") setPage("rivr");
     else setPage("home");
   };
 
@@ -39,6 +41,7 @@ export default function App() {
       {page === "lithos" && <Lithos />}
       {page === "synapse" && <SynapseX />}
       {page === "prisma" && <Prisma />}
+      {page === "rivr" && <RIVR />}
     </>
   );
 }
