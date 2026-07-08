@@ -10,8 +10,9 @@ import SynapseX from "./views/SynapseX/SynapseX.tsx";
 import Prisma from "./views/Prisma/Prisma.tsx";
 import RIVR from "./views/RIVR/RIVR.tsx";
 import Mainframe from "./views/Mainframe/Mainframe.tsx";
+import Marketeam from "./views/Marketeam/Marketeam.tsx";
 
-type Page = "home" | "toonhub" | "foldcraft" | "jack" | "portfolio" | "viktor" | "lithos" | "synapse" | "prisma" | "rivr" | "mainframe";
+type Page = "home" | "toonhub" | "foldcraft" | "jack" | "portfolio" | "viktor" | "lithos" | "synapse" | "prisma" | "rivr" | "mainframe" | "marketeam";
 
 export default function App() {
   const [page, setPage] = useState<Page>("home");
@@ -27,6 +28,7 @@ export default function App() {
     else if (path === "/prisma") setPage("prisma");
     else if (path === "/rivr") setPage("rivr");
     else if (path === "/mainframe") setPage("mainframe");
+    else if (path === "/marketeam") setPage("marketeam");
     else setPage("home");
   };
 
@@ -45,6 +47,7 @@ export default function App() {
       {page === "prisma" && <Prisma />}
       {page === "rivr" && <RIVR />}
       {page === "mainframe" && <Mainframe />}
+      {page === "marketeam" && <Marketeam />}
     </>
   );
 }

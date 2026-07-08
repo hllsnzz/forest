@@ -1,0 +1,172 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Urbanist:wght@600;700&display=swap");
+
+@theme {
+  --font-inter: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-urbanist: "Urbanist", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ===== @property 声明：用于旋转边框渐变 ===== */
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+/* ===== 按键动画 ===== */
+@keyframes border-rotate {
+  to { --border-angle: 360deg; }
+}
+
+/* ===== 输入动画（打字机光标） ===== */
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ===== 头像飞入动画 ===== */
+@keyframes avatar-fly-in {
+  0% {
+    transform: scale(0.3) rotate(-180deg);
+    filter: blur(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+/* ===== 淡入动画 ===== */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-down {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ===== 动画实体类 ===== */
+.animate-fade-down { animation: fade-down 0.8s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.animate-fade-up { animation: fade-up 1s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.animate-scale-in { animation: scale-in 1.2s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.animate-blink-cursor { animation: blink-cursor 1s step-end infinite; }
+
+/* ===== 旋转边框包裹器 ===== */
+.btn-border-wrap {
+  position: relative;
+  display: inline-flex;
+  border-radius: 50px;
+  overflow: hidden;
+}
+.btn-border-wrap::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  padding: 3px;
+  border-radius: inherit;
+  background: conic-gradient(from var(--border-angle), #A068FF, #070319, #A068FF, #070319, #A068FF);
+  animation: border-rotate 3s linear infinite;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ===== 导航链接下滑动画 ===== */
+.nav-underline {
+  position: relative;
+  display: inline-block;
+}
+.nav-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.nav-underline:hover::after {
+  transform: scaleX(1);
+}
+
+/* ===== 从右向左填充的 hover 按钮 ===== */
+.btn-fill-right {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+}
+.btn-fill-right::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #A068FF;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: -1;
+  border-radius: inherit;
+}
+.btn-fill-right:hover::after {
+  transform: translateX(0);
+}
+.btn-fill-right.btn-fill-left::after {
+  transform: translateX(-100%);
+}
+.btn-fill-right.btn-fill-left:hover::after {
+  transform: translateX(0);
+}
+
+/* ===== 自动滚动条（Logo Ticker） ===== */
+.ticker-track {
+  display: flex;
+  gap: 64px;
+  animation: ticker-scroll 20s linear infinite;
+  width: fit-content;
+}
+.ticker-mask {
+  -webkit-mask: linear-gradient(90deg, transparent, #000 25%, #000 75%, transparent);
+  mask: linear-gradient(90deg, transparent, #000 25%, #000 75%, transparent);
+  overflow: hidden;
+}
+
+/* ===== 拖拽 / 选择禁用 ===== */
+.no-select {
+  user-select: none;
+  -webkit-user-select: none;
+}

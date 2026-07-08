@@ -112,6 +112,16 @@ const PROJECTS = [
     color: "#1C2E1E",
   },
   {
+    id: "marketeam",
+    title: "MARKETEAM",
+    subtitle: "Marketing Talent Platform",
+    description: "A marketing talent platform landing page with typewriter effect, animated orbit circles, and infinite logo ticker.",
+    icon: Sparkles,
+    available: true,
+    path: "/marketeam",
+    color: "#A068FF",
+  },
+  {
     id: "project-2",
     title: "PROJECT ALPHA",
     subtitle: "Interactive Experience",
