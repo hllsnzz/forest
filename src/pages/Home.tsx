@@ -112,6 +112,16 @@ const PROJECTS = [
     color: "#1C2E1E",
   },
   {
+    id: "cozypaws",
+    title: "COZYPAWS",
+    subtitle: "Pet Store Hero Landing",
+    description: "A single-page pet store hero with staggered word animations, responsive breakpoints, and floating product cards.",
+    icon: Sparkles,
+    available: true,
+    path: "/cozypaws",
+    color: "#E86A10",
+  },
+  {
     id: "marketeam",
     title: "MARKETEAM",
     subtitle: "Marketing Talent Platform",

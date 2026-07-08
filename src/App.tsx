@@ -11,8 +11,9 @@ import Prisma from "./views/Prisma/Prisma.tsx";
 import RIVR from "./views/RIVR/RIVR.tsx";
 import Mainframe from "./views/Mainframe/Mainframe.tsx";
 import Marketeam from "./views/Marketeam/Marketeam.tsx";
+import CozyPaws from "./views/CozyPaws/CozyPaws.tsx";
 
-type Page = "home" | "toonhub" | "foldcraft" | "jack" | "portfolio" | "viktor" | "lithos" | "synapse" | "prisma" | "rivr" | "mainframe" | "marketeam";
+type Page = "home" | "toonhub" | "foldcraft" | "jack" | "portfolio" | "viktor" | "lithos" | "synapse" | "prisma" | "rivr" | "mainframe" | "marketeam" | "cozypaws";
 
 export default function App() {
   const [page, setPage] = useState<Page>("home");
@@ -29,6 +30,7 @@ export default function App() {
     else if (path === "/rivr") setPage("rivr");
     else if (path === "/mainframe") setPage("mainframe");
     else if (path === "/marketeam") setPage("marketeam");
+    else if (path === "/cozypaws") setPage("cozypaws");
     else setPage("home");
   };
 
@@ -48,6 +50,7 @@ export default function App() {
       {page === "rivr" && <RIVR />}
       {page === "mainframe" && <Mainframe />}
       {page === "marketeam" && <Marketeam />}
+      {page === "cozypaws" && <CozyPaws />}
     </>
   );
 }
