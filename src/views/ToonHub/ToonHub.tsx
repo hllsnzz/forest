@@ -132,32 +132,32 @@ export default function ToonHub() {
         style={{ height: "100vh", overflow: "hidden" }}
       >
         <button
-            onClick={onBack}
-            className="absolute top-6 left-4 sm:top-10 sm:left-10 flex items-center gap-2 cursor-pointer"
-            style={{
-              zIndex: 70,
-              background: "rgba(255,255,255,0.1)",
-              border: "1px solid rgba(255,255,255,0.2)",
-              borderRadius: 999,
-              padding: "0.4rem 1rem",
-              color: "white",
-              fontSize: "0.75rem",
-              fontWeight: 500,
-              letterSpacing: "0.05em",
-              transition: "background 200ms, transform 200ms",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = "rgba(255,255,255,0.18)";
-              e.currentTarget.style.transform = "scale(1.04)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = "rgba(255,255,255,0.1)";
-              e.currentTarget.style.transform = "scale(1)";
-            }}
-          >
-            <ArrowLeft size={16} strokeWidth={2.5} />
-            BACK
-          </button>
+          onClick={onBack}
+          className="absolute top-6 left-4 sm:top-10 sm:left-10 flex items-center gap-2 cursor-pointer"
+          style={{
+            zIndex: 70,
+            background: "rgba(255,255,255,0.1)",
+            border: "1px solid rgba(255,255,255,0.2)",
+            borderRadius: 999,
+            padding: "0.4rem 1rem",
+            color: "white",
+            fontSize: "0.75rem",
+            fontWeight: 500,
+            letterSpacing: "0.05em",
+            transition: "background 200ms, transform 200ms",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.background = "rgba(255,255,255,0.18)";
+            e.currentTarget.style.transform = "scale(1.04)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.background = "rgba(255,255,255,0.1)";
+            e.currentTarget.style.transform = "scale(1)";
+          }}
+        >
+          <ArrowLeft size={16} strokeWidth={2.5} />
+          BACK
+        </button>
         {/* Grain overlay */}
         <div
           className="absolute inset-0 pointer-events-none"

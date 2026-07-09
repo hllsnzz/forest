@@ -22,21 +22,21 @@
 
 ### 路由对照
 
-| URL 路径 | 页面 | 组件源 |
-|----------|------|--------|
-| `/` | 首页网格 | src/pages/Home.tsx |
-| `/toonhub` | 手办轮播 | src/views/ToonHub/ToonHub.tsx |
-| `/foldcraft` | FoldCraft | src/views/FoldCraft/FoldCraft.tsx |
-| `/jack` | Jack Portfolio | src/views/JackPortfolio/JackPortfolio.tsx |
-| `/portfolio` | Portfolio | src/views/Portfolio/Portfolio.tsx |
-| `/viktor` | Viktor Oddy | src/views/ViktorOddy/ViktorOddy.tsx |
-| `/lithos` | Lithos | src/views/Lithos/Lithos.tsx |
-| `/synapse` | SynapseX | src/views/SynapseX/SynapseX.tsx |
-| `/prisma` | Prisma | src/views/Prisma/Prisma.tsx |
-| `/rivr` | RIVR | src/views/RIVR/RIVR.tsx |
-| `/mainframe` | Mainframe | src/views/Mainframe/Mainframe.tsx |
-| `/marketeam` | Marketeam | src/views/Marketeam/Marketeam.tsx |
-| `/cozypaws` | CozyPaws | src/views/CozyPaws/CozyPaws.tsx |
+| URL 路径     | 页面           | 组件源                                    |
+| ------------ | -------------- | ----------------------------------------- |
+| `/`          | 首页网格       | src/pages/Home.tsx                        |
+| `/toonhub`   | 手办轮播       | src/views/ToonHub/ToonHub.tsx             |
+| `/foldcraft` | FoldCraft      | src/views/FoldCraft/FoldCraft.tsx         |
+| `/jack`      | Jack Portfolio | src/views/JackPortfolio/JackPortfolio.tsx |
+| `/portfolio` | Portfolio      | src/views/Portfolio/Portfolio.tsx         |
+| `/viktor`    | Viktor Oddy    | src/views/ViktorOddy/ViktorOddy.tsx       |
+| `/lithos`    | Lithos         | src/views/Lithos/Lithos.tsx               |
+| `/synapse`   | SynapseX       | src/views/SynapseX/SynapseX.tsx           |
+| `/prisma`    | Prisma         | src/views/Prisma/Prisma.tsx               |
+| `/rivr`      | RIVR           | src/views/RIVR/RIVR.tsx                   |
+| `/mainframe` | Mainframe      | src/views/Mainframe/Mainframe.tsx         |
+| `/marketeam` | Marketeam      | src/views/Marketeam/Marketeam.tsx         |
+| `/cozypaws`  | CozyPaws       | src/views/CozyPaws/CozyPaws.tsx           |
 
 ### 技术栈
 
@@ -49,7 +49,7 @@
 ### 资源管理
 
 - 图片统一放在 src/assets/images/{page}/ 下，按页面分文件夹
-- 目前仅 	oonhub/ 目录有图片（1.png ~ 4.png）
+- 目前仅 oonhub/ 目录有图片（1.png ~ 4.png）
 - 通过 Vite 静态导入（import img from \"../assets/images/toonhub/1.png\"），会自动处理 hash
 
 ## 工作规则
@@ -64,8 +64,7 @@
 
 ### 文件结构
 
-`
-src/
+`src/
 ├── App.tsx                  # 根组件，状态路由
 ├── main.tsx                 # 入口
 ├── index.css                # Tailwind 入口
@@ -76,22 +75,21 @@ src/
 ├── components/              # 可复用 UI 部件（目前为空）
 └── assets/
     └── images/
-        └── toonhub/         # ToonHub 页面图片
-`
+        └── toonhub/         # ToonHub 页面图片`
 
 ### Git 规范
 
 - 分支前缀统一使用 codex/
 - commit message 使用语义化前缀：eat:、ix:、
-efactor:、style:、docs:
+  efactor:、style:、docs:
 
 ## 输出要求
 
 - 新增页面时需在 `App.tsx` 的 `<Routes>` 中添加对应 `<Route>`，同时在路由对照表中补充记录
 - 页面切换回调统一命名为 onNavigate（进入）和 onBack（返回）
 - 图片资源必须放在对应页面的 src/assets/images/{page}/ 目录
-- 构建前执行 
-px tsc --noEmit 确保无类型错误
+- 构建前执行
+  px tsc --noEmit 确保无类型错误
 
 ## 不能乱动的地方
 

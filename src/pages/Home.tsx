@@ -116,7 +116,8 @@ const PROJECTS = [
     id: "cozypaws",
     title: "COZYPAWS",
     subtitle: "Pet Store Hero Landing",
-    description: "A single-page pet store hero with staggered word animations, responsive breakpoints, and floating product cards.",
+    description:
+      "A single-page pet store hero with staggered word animations, responsive breakpoints, and floating product cards.",
     icon: Sparkles,
     available: true,
     path: "/cozypaws",
@@ -126,7 +127,8 @@ const PROJECTS = [
     id: "marketeam",
     title: "MARKETEAM",
     subtitle: "Marketing Talent Platform",
-    description: "A marketing talent platform landing page with typewriter effect, animated orbit circles, and infinite logo ticker.",
+    description:
+      "A marketing talent platform landing page with typewriter effect, animated orbit circles, and infinite logo ticker.",
     icon: Sparkles,
     available: true,
     path: "/marketeam",
