@@ -12,6 +12,7 @@ import RIVR from "./views/RIVR/RIVR.tsx";
 import Mainframe from "./views/Mainframe/Mainframe.tsx";
 import Marketeam from "./views/Marketeam/Marketeam.tsx";
 import CozyPaws from "./views/CozyPaws/CozyPaws.tsx";
+import NHM from "./views/NHM/NHM.tsx";
 
 export default function App() {
   return (
@@ -29,6 +30,7 @@ export default function App() {
       <Route path="/mainframe" element={<Mainframe />} />
       <Route path="/marketeam" element={<Marketeam />} />
       <Route path="/cozypaws" element={<CozyPaws />} />
+      <Route path="/nhm" element={<NHM />} />
     </Routes>
   );
 }

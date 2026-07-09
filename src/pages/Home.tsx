@@ -135,6 +135,17 @@ const PROJECTS = [
     color: "#A068FF",
   },
   {
+    id: "nhm",
+    title: "NHM",
+    subtitle: "Natural History Museum Landing",
+    description:
+      "A full-page museum landing with animated SVG logo letters, sand-dissolve chapter transitions, pterodactyl parallax, and dark fossil gallery.",
+    icon: Sparkles,
+    available: true,
+    path: "/nhm",
+    color: "#4a7c59",
+  },
+  {
     id: "project-2",
     title: "PROJECT ALPHA",
     subtitle: "Interactive Experience",
