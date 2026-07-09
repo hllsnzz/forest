@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { ArrowRight, Sparkles, Box, LayoutGrid, Target } from "lucide-react";
 
 const PROJECTS = [
@@ -186,11 +187,8 @@ function DotPattern() {
   );
 }
 
-interface HomeProps {
-  onNavigate: (path: string) => void;
-}
-
-export default function Home({ onNavigate }: HomeProps) {
+export default function Home() {
+  const onNavigate = useNavigate();
   return (
     <div
       className="relative min-h-screen overflow-hidden"

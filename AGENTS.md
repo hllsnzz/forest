@@ -15,24 +15,35 @@
 
 ### 导航
 
-不使用 eact-router-dom，采用 React state 驱动页面切换（App.tsx 中 useState<Page>）。页面之间通过 prop 回调通信：
+使用 **react-router-dom v7** 进行路由管理。`<BrowserRouter>` 在 `main.tsx` 中包裹根组件，`<Routes>` / `<Route>` 声明在 `App.tsx` 中。页面内部跳转使用 `useNavigate()` hook，不再通过 props 传递回调：
 
-- onNavigate(path: string) — 从 Home 跳转到详情页
-- onBack() — 从详情页返回 Home
+- `useNavigate()(path)` — 跳转到目标页
+- `useNavigate()('/')` — 返回首页
 
 ### 路由对照
 
-| state    | 页面 | 组件源 |
+| URL 路径 | 页面 | 组件源 |
 |----------|------|--------|
-| \"home\"    | 首页网格 | src/pages/Home.tsx |
-| \"toonhub\" | 手办轮播 | src/views/ToonHub.tsx |
+| `/` | 首页网格 | src/pages/Home.tsx |
+| `/toonhub` | 手办轮播 | src/views/ToonHub/ToonHub.tsx |
+| `/foldcraft` | FoldCraft | src/views/FoldCraft/FoldCraft.tsx |
+| `/jack` | Jack Portfolio | src/views/JackPortfolio/JackPortfolio.tsx |
+| `/portfolio` | Portfolio | src/views/Portfolio/Portfolio.tsx |
+| `/viktor` | Viktor Oddy | src/views/ViktorOddy/ViktorOddy.tsx |
+| `/lithos` | Lithos | src/views/Lithos/Lithos.tsx |
+| `/synapse` | SynapseX | src/views/SynapseX/SynapseX.tsx |
+| `/prisma` | Prisma | src/views/Prisma/Prisma.tsx |
+| `/rivr` | RIVR | src/views/RIVR/RIVR.tsx |
+| `/mainframe` | Mainframe | src/views/Mainframe/Mainframe.tsx |
+| `/marketeam` | Marketeam | src/views/Marketeam/Marketeam.tsx |
+| `/cozypaws` | CozyPaws | src/views/CozyPaws/CozyPaws.tsx |
 
 ### 技术栈
 
 - **框架**: React 19 + TypeScript 6
 - **构建**: Vite 8（Rolldown）
 - **样式**: Tailwind CSS v4（通过 @tailwindcss/vite 插件）+ 内联 style 对象
-- **图标**: lucide-react
+- **路由**: react-router-dom v7
 - **字体**: Inter（正文）、Anton（展示用，仅 ToonHub 使用）
 
 ### 资源管理
@@ -71,11 +82,12 @@ src/
 ### Git 规范
 
 - 分支前缀统一使用 codex/
-- commit message 使用语义化前缀：eat:、ix:、efactor:、style:、docs:
+- commit message 使用语义化前缀：eat:、ix:、
+efactor:、style:、docs:
 
 ## 输出要求
 
-- 新增页面时需在 App.tsx 的 Page 类型中添加对应值
+- 新增页面时需在 `App.tsx` 的 `<Routes>` 中添加对应 `<Route>`，同时在路由对照表中补充记录
 - 页面切换回调统一命名为 onNavigate（进入）和 onBack（返回）
 - 图片资源必须放在对应页面的 src/assets/images/{page}/ 目录
 - 构建前执行 
@@ -83,7 +95,7 @@ px tsc --noEmit 确保无类型错误
 
 ## 不能乱动的地方
 
-1. **App.tsx 的路由机制** — 不要改回 eact-router-dom，坚持 state 驱动
+1. **App.tsx 的路由机制** — 使用 react-router-dom v7，不要改回 state 驱动
 2. **Tailwind 版本** — 项目使用 Tailwind v4（@import \"tailwindcss\" 语法），不要降级到 v3
 3. **Vite 配置** — ite.config.ts 仅保留 @tailwindcss/vite 插件，不要额外引入其他插件
 4. **tsconfig.json** — 保持 erasableSyntaxOnly: true，不要使用 enum / namespace

@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 import img1 from "../../assets/images/toonhub/1.png";
@@ -27,9 +28,9 @@ function getRoles(activeIndex: number): Record<Role, number> {
   };
 }
 
-interface ToonHubProps { onBack?: () => void; }
-
-export default function ToonHub({ onBack }: ToonHubProps) {
+export default function ToonHub() {
+  const routerNavigate = useNavigate();
+  const onBack = () => routerNavigate("/");
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 640);
@@ -130,8 +131,7 @@ export default function ToonHub({ onBack }: ToonHubProps) {
         className="relative w-full"
         style={{ height: "100vh", overflow: "hidden" }}
       >
-        {onBack && (
-          <button
+        <button
             onClick={onBack}
             className="absolute top-6 left-4 sm:top-10 sm:left-10 flex items-center gap-2 cursor-pointer"
             style={{
@@ -158,7 +158,6 @@ export default function ToonHub({ onBack }: ToonHubProps) {
             <ArrowLeft size={16} strokeWidth={2.5} />
             BACK
           </button>
-        )}
         {/* Grain overlay */}
         <div
           className="absolute inset-0 pointer-events-none"

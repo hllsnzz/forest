@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home.tsx";
 import ToonHub from "./views/ToonHub/ToonHub.tsx";
 import FoldCraft from "./views/FoldCraft/FoldCraft.tsx";
@@ -13,44 +13,22 @@ import Mainframe from "./views/Mainframe/Mainframe.tsx";
 import Marketeam from "./views/Marketeam/Marketeam.tsx";
 import CozyPaws from "./views/CozyPaws/CozyPaws.tsx";
 
-type Page = "home" | "toonhub" | "foldcraft" | "jack" | "portfolio" | "viktor" | "lithos" | "synapse" | "prisma" | "rivr" | "mainframe" | "marketeam" | "cozypaws";
-
 export default function App() {
-  const [page, setPage] = useState<Page>("home");
-
-  const navigate = (path: string) => {
-    if (path === "/toonhub") setPage("toonhub");
-    else if (path === "/foldcraft") setPage("foldcraft");
-    else if (path === "/jack") setPage("jack");
-    else if (path === "/portfolio") setPage("portfolio");
-    else if (path === "/viktor") setPage("viktor");
-    else if (path === "/lithos") setPage("lithos");
-    else if (path === "/synapse") setPage("synapse");
-    else if (path === "/prisma") setPage("prisma");
-    else if (path === "/rivr") setPage("rivr");
-    else if (path === "/mainframe") setPage("mainframe");
-    else if (path === "/marketeam") setPage("marketeam");
-    else if (path === "/cozypaws") setPage("cozypaws");
-    else setPage("home");
-  };
-
-  const goBack = () => setPage("home");
-
   return (
-    <>
-      {page === "home" && <Home onNavigate={navigate} />}
-      {page === "toonhub" && <ToonHub onBack={goBack} />}
-      {page === "foldcraft" && <FoldCraft />}
-      {page === "jack" && <JackPortfolio />}
-      {page === "portfolio" && <Portfolio />}
-      {page === "viktor" && <ViktorOddy />}
-      {page === "lithos" && <Lithos />}
-      {page === "synapse" && <SynapseX />}
-      {page === "prisma" && <Prisma />}
-      {page === "rivr" && <RIVR />}
-      {page === "mainframe" && <Mainframe />}
-      {page === "marketeam" && <Marketeam />}
-      {page === "cozypaws" && <CozyPaws />}
-    </>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/toonhub" element={<ToonHub />} />
+      <Route path="/foldcraft" element={<FoldCraft />} />
+      <Route path="/jack" element={<JackPortfolio />} />
+      <Route path="/portfolio" element={<Portfolio />} />
+      <Route path="/viktor" element={<ViktorOddy />} />
+      <Route path="/lithos" element={<Lithos />} />
+      <Route path="/synapse" element={<SynapseX />} />
+      <Route path="/prisma" element={<Prisma />} />
+      <Route path="/rivr" element={<RIVR />} />
+      <Route path="/mainframe" element={<Mainframe />} />
+      <Route path="/marketeam" element={<Marketeam />} />
+      <Route path="/cozypaws" element={<CozyPaws />} />
+    </Routes>
   );
 }
