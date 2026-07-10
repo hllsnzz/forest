@@ -155,8 +155,17 @@ const PROJECTS = [
     available: true,
     path: "/prmpt",
     color: "#111111",
-  },
-  {
+  },  {
+    id: "bloom",
+    title: "BLOOM",
+    subtitle: "AI Plant Design \u2014 Liquid Glass Hero",
+    description:
+      "Full-screen liquid glass morphism landing page for an AI floral design platform with video background, dual-panel layout, and gradient border effects.",
+    icon: Sparkles,
+    available: true,
+    path: "/bloom",
+    color: "#1a3a1a",
+  },  {
     id: "project-2",
     title: "PROJECT ALPHA",
     subtitle: "Interactive Experience",

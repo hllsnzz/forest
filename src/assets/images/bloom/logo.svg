@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <!-- 每个花瓣使用独立放射渐变，从中心亮青到边缘深蓝 -->
+    <radialGradient id="tl" cx="60%" cy="60%" r="70%">
+      <stop offset="0%"   stop-color="#a5f3fc"/>
+      <stop offset="100%" stop-color="#0891b2"/>
+    </radialGradient>
+    <radialGradient id="tr" cx="40%" cy="60%" r="70%">
+      <stop offset="0%"   stop-color="#a5f3fc"/>
+      <stop offset="100%" stop-color="#0891b2"/>
+    </radialGradient>
+    <radialGradient id="bl" cx="60%" cy="40%" r="70%">
+      <stop offset="0%"   stop-color="#a5f3fc"/>
+      <stop offset="100%" stop-color="#0891b2"/>
+    </radialGradient>
+    <radialGradient id="br" cx="40%" cy="40%" r="70%">
+      <stop offset="0%"   stop-color="#a5f3fc"/>
+      <stop offset="100%" stop-color="#0891b2"/>
+    </radialGradient>
+  </defs>
+  <!-- 四瓣：2×2 圆形排列，圆心距 44px，半径 24px，中心略微交叠 -->
+  <circle cx="28" cy="28" r="24" fill="url(#tl)"/>
+  <circle cx="72" cy="28" r="24" fill="url(#tr)"/>
+  <circle cx="28" cy="72" r="24" fill="url(#bl)"/>
+  <circle cx="72" cy="72" r="24" fill="url(#br)"/>
+</svg>

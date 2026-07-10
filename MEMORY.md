@@ -108,7 +108,14 @@
 - 所有文字 UI 均使用 mix-blend-mode: exclusion（亮/暗背景均可见）
 - 字体：Inter Tight 500（动态注入 Google Fonts）
 - 资源：CloudFront 视频 + higgs.ai 图片（外链）
-
+### 3.16 Bloom（src/views/Bloom/）
+- 提示词: Bloom AI 植物设计平台着陆页
+- 核心视觉：Liquid Glass Morphism（动态渐变边框 + 毛玻璃效果）
+- 布局：全屏视频背景 + 左右双列（左 52% 玻璃面板、右 48% 展示卡片）
+- 技术要点：::before mask 技术实现渐变边框（无 border 属性）
+- 字体：Poppins + Source Serif 4（动态注入）
+- 资源：CloudFront 视频 + 自制 SVG Logo（均已本地化）
+- 严格灰阶配色，无彩色元素
 - 提示词: 自然历史博物馆着陆页
 - 配色：#fcfcfc 底色 / #111 近黑 / #0a0a0a 暗区；严格单色系
 - 字体：Inter 正文 + JetBrains Mono （动态注入 Google Fonts）
