@@ -108,7 +108,12 @@
 - 所有文字 UI 均使用 mix-blend-mode: exclusion（亮/暗背景均可见）
 - 字体：Inter Tight 500（动态注入 Google Fonts）
 - 资源：CloudFront 视频 + higgs.ai 图片（外链）
-### 3.16 Bloom（src/views/Bloom/）
+### 3.17 DesignPro（src/views/DesignPro/）
+- 提示词: 产品设计教育平台 Hero 着陆页
+- 核心特效：ShinyText 组件（framer-motion + useMotionValue + useTransform 实现连续搓光渐变）
+- 布局：全屏视频背景 + 圆角胶囊导航条 + 双列说明文字 + 大标题 + CTA
+- 字体：Inter（动态注入）
+- 资源：CloudFront 视频（已本地化）
 - 提示词: Bloom AI 植物设计平台着陆页
 - 核心视觉：Liquid Glass Morphism（动态渐变边框 + 毛玻璃效果）
 - 布局：全屏视频背景 + 左右双列（左 52% 玻璃面板、右 48% 展示卡片）

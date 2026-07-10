@@ -165,6 +165,17 @@ const PROJECTS = [
     available: true,
     path: "/bloom",
     color: "#1a3a1a",
+  },
+  {
+    id: "designpro",
+    title: "DESIGNPRO",
+    subtitle: "Product Design Education Hero",
+    description:
+      "Full-screen hero for a product design education platform with shiny gradient text animation, pill navigation, and video background.",
+    icon: Sparkles,
+    available: true,
+    path: "/designpro",
+    color: "#0a0a1a",
   },  {
     id: "project-2",
     title: "PROJECT ALPHA",

@@ -1,0 +1,12 @@
+/* DesignPro — 产品设计教育平台 Hero 页面专属样式 */
+
+/* 扫光动画：备用 CSS 方案（framer-motion 主方案已在组件中实现）*/
+@keyframes dp-shine {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+/* 平滑过渡：所有交互元素统一 */
+.dp-transition {
+  transition: all 0.2s ease;
+}
