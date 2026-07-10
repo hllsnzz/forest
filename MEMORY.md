@@ -99,7 +99,15 @@
 - 浮动产品卡+视频卡、底部三图覆盖层
 - mobile/md/lg 三档响应式
 
-### 3.14 NHM（src/views/NHM/）
+### 3.15 Prmpt（src/views/Prmpt/）
+- 提示词: prmpt 模特档案着陆页
+- 双阶段滚动：Hero（视频背景 + UI 叠层）→ 画廘（黑色面板 + 散点图片）
+- 核心机制：纯 RAF 驱动（面板滑入、卡片缩放、Outro）
+- 桶面端：鼠标 X 轴 scrub 视频（死区 max(30, 5%vw)），仅在 !video.seeking 时更新 currentTime
+- 移动端：左右视频交替自动播放（ended 事件驱动）
+- 所有文字 UI 均使用 mix-blend-mode: exclusion（亮/暗背景均可见）
+- 字体：Inter Tight 500（动态注入 Google Fonts）
+- 资源：CloudFront 视频 + higgs.ai 图片（外链）
 
 - 提示词: 自然历史博物馆着陆页
 - 配色：#fcfcfc 底色 / #111 近黑 / #0a0a0a 暗区；严格单色系
@@ -165,7 +173,8 @@
 
 ## 五、Git 提交历史（按时间倒序）
 
-1. afa4dd7 feat: add NHM Natural History Museum landing page
+1. (new) feat: add Prmpt fashion archive landing page
+2. a50807d feat: add NHM page with Chinese comments, nhm.css, prompt.md; update MEMORY.md
 2. fdc5a1f style: normalize line endings and formatting
 3. 47df4b1 feat: migrate to react-router-dom v7
 4. 488acb6 feat: add CozyPaws pet store hero landing page

@@ -146,6 +146,17 @@ const PROJECTS = [
     color: "#4a7c59",
   },
   {
+    id: "prmpt",
+    title: "PRMPT",
+    subtitle: "Fashion Archive — Scroll Gallery",
+    description:
+      "Full-screen scroll-driven fashion archive with RAF card scaling, cursor-scrubbed video, mix-blend-mode UI, and a black panel gallery reveal.",
+    icon: Sparkles,
+    available: true,
+    path: "/prmpt",
+    color: "#111111",
+  },
+  {
     id: "project-2",
     title: "PROJECT ALPHA",
     subtitle: "Interactive Experience",

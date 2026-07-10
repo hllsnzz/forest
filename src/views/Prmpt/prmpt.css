@@ -1,0 +1,18 @@
+/* Prmpt — 品牌档案画廊页面专属样式 */
+
+/* 画廊卡片：开启 GPU 合成层，优化 scale 动画性能 */
+.bp-card {
+  will-change: transform;
+}
+
+/* 无障碍：prefers-reduced-motion 时关闭 GPU 合成提升 */
+@media (prefers-reduced-motion: reduce) {
+  .bp-card {
+    will-change: auto;
+  }
+}
+
+/* 确保滚动占位容器不产生横向滚动条 */
+#scroll-spacer {
+  overflow-x: hidden;
+}

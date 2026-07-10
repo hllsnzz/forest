@@ -13,6 +13,7 @@ import Mainframe from "./views/Mainframe/Mainframe.tsx";
 import Marketeam from "./views/Marketeam/Marketeam.tsx";
 import CozyPaws from "./views/CozyPaws/CozyPaws.tsx";
 import NHM from "./views/NHM/NHM.tsx";
+import Prmpt from "./views/Prmpt/Prmpt.tsx";
 
 export default function App() {
   return (
@@ -31,6 +32,7 @@ export default function App() {
       <Route path="/marketeam" element={<Marketeam />} />
       <Route path="/cozypaws" element={<CozyPaws />} />
       <Route path="/nhm" element={<NHM />} />
+      <Route path="/prmpt" element={<Prmpt />} />
     </Routes>
   );
 }
