@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fincash — Clone</title>
+  <link rel="icon" type="image/png" href="https://fincash.demos.tailgrids.com/favicon.png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ============================================
+     HEADER / NAVIGATION
+     ============================================ -->
+<header class="header">
+  <nav class="nav container flex-between">
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-icon">F</span>
+      Fincash
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="nav-link active">Home</a></li>
+      <li><a href="features.html" class="nav-link">Features</a></li>
+      <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="contact.html" class="btn btn-ghost">Sign In</a>
+      <a href="contact.html" class="btn btn-primary">Get Started</a>
+    </div>
+    <button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+  </nav>
+</header>
+
+<!-- ============================================
+     HERO
+     ============================================ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      New Update — v2.0 Launch
+    </div>
+    <h1 class="hero-title">
+      Manage Your Money<br />
+      Unlock Your <span class="highlight">Financial Freedom</span>
+    </h1>
+    <p class="hero-desc">
+      The all-in-one app that tracks spending, automates saving, and provides insights to grow your wealth with clarity. Your unified dashboard for financial clarity.
+    </p>
+    <div class="hero-actions">
+      <a href="contact.html" class="btn btn-primary">
+        Download Now
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+      <a href="features.html" class="btn btn-outline">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     STATS
+     ============================================ -->
+<section class="section-secondary stats">
+  <div class="container">
+    <div class="text-center mb-12">
+      <h2 class="section-title">Our Journey in Numbers: Growth, Trust, and Impact</h2>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number">$2.4B+</div>
+        <div class="stat-label">Assets Securely Managed</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">1.2M+</div>
+        <div class="stat-label">Trusted by users</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">4.8★</div>
+        <div class="stat-label">App Store rating</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FEATURES
+     ============================================ -->
+<section class="features">
+  <div class="container">
+    <div class="features-header">
+      <h2 class="section-title">Your Everyday Finance, Simplified</h2>
+      <p class="section-desc">
+        From sending money to tracking expenses, this app brings all essential financial tools into one clean and intuitive experience — designed for speed, clarity, and security.
+      </p>
+    </div>
+    <div class="grid-3">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+        </div>
+        <h3 class="feature-title">All Your Finances, One View</h3>
+        <p class="feature-desc">Check your balance, recent activity, and quick actions from a single, intuitive dashboard.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3 class="feature-title">Tracking Income Expense</h3>
+        <p class="feature-desc">Monitor deposits and withdrawals with clear visuals that help you understand your money flow.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        </div>
+        <h3 class="feature-title">Smart Dashboard</h3>
+        <p class="feature-desc">View balances, activity, and actions at a glance from your home screen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+     ============================================ -->
+<footer class="footer section-secondary">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo mb-4">
+          <span class="nav-logo-icon">F</span>
+          Fincash
+        </a>
+        <p>A modern fintech app designed to make payments, money management, and financial tracking simple, secure, and accessible.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & conditions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p>Stay up to date with the latest features and releases.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Enter your email" />
+          <button type="submit">Subscribe</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Fincash. All rights reserved.</span>
+      <span>Built with care</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

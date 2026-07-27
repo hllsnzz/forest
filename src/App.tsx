@@ -16,6 +16,9 @@ import NHM from "./views/NHM/NHM.tsx";
 import Prmpt from "./views/Prmpt/Prmpt.tsx";
 import Bloom from "./views/Bloom/Bloom.tsx";
 import DesignPro from "./views/DesignPro/DesignPro.tsx";
+import Fincash from "./views/Fincash/Fincash.tsx";
+import ShapeGridPage from "./views/react-bits/shape-grid/ShapeGridPage.tsx";
+import GrainientPage from "./views/react-bits/grainient/GrainientPage.tsx";
 
 export default function App() {
   return (
@@ -37,6 +40,9 @@ export default function App() {
       <Route path="/prmpt" element={<Prmpt />} />
       <Route path="/bloom" element={<Bloom />} />
       <Route path="/designpro" element={<DesignPro />} />
+      <Route path="/fincash" element={<Fincash />} />
+      <Route path="/shapegrid" element={<ShapeGridPage />} />
+      <Route path="/grainient" element={<GrainientPage />} />
     </Routes>
   );
 }

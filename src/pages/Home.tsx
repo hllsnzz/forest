@@ -155,7 +155,8 @@ const PROJECTS = [
     available: true,
     path: "/prmpt",
     color: "#111111",
-  },  {
+  },
+  {
     id: "bloom",
     title: "BLOOM",
     subtitle: "AI Plant Design \u2014 Liquid Glass Hero",
@@ -176,26 +177,38 @@ const PROJECTS = [
     available: true,
     path: "/designpro",
     color: "#0a0a1a",
-  },  {
-    id: "project-2",
-    title: "PROJECT ALPHA",
+  },
+  {
+    id: "fincash",
+    title: "FINCASH",
+    subtitle: "Product Design Education Hero",
+    description:
+      "Full-screen hero for a product design education platform with shiny gradient text animation, pill navigation, and video background.",
+    icon: Sparkles,
+    available: true,
+    path: "/fincash",
+    color: "#0a0a1a",
+  },
+  {
+    id: "shapegrid",
+    title: "SHAPEGRID",
     subtitle: "Interactive Experience",
     description:
       "A groundbreaking interactive experience pushing the boundaries of web-based 3D rendering.",
     icon: LayoutGrid,
-    available: false,
-    path: "",
+    available: true,
+    path: "/shapegrid",
     color: "#6BBF7A",
   },
   {
-    id: "project-3",
-    title: "PROJECT BETA",
+    id: "grainient",
+    title: "GRAINIENT",
     subtitle: "Data Visualization",
     description:
       "Real-time data visualization engine for complex multidimensional datasets.",
     icon: Target,
-    available: false,
-    path: "",
+    available: true,
+    path: "/grainient",
     color: "#6EB5FF",
   },
   {
