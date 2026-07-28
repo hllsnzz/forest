@@ -212,14 +212,14 @@ const PROJECTS = [
     color: "#6EB5FF",
   },
   {
-    id: "project-4",
-    title: "PROJECT GAMMA",
+    id: "glitterwrap",
+    title: "GLITTERWRAP",
     subtitle: "Generative Design",
     description:
       "AI-powered generative design tool for creating unique visual artifacts.",
     icon: Sparkles,
-    available: false,
-    path: "",
+    available: true,
+    path: "/glitterwrap",
     color: "#E882B4",
   },
 ];

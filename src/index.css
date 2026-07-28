@@ -19,3 +19,10 @@
   --color-muted: hsl(var(--muted));
   --color-stroke: hsl(var(--stroke));
 }
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}

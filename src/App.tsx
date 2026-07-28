@@ -19,6 +19,7 @@ import DesignPro from "./views/DesignPro/DesignPro.tsx";
 import Fincash from "./views/Fincash/Fincash.tsx";
 import ShapeGridPage from "./views/react-bits/shape-grid/ShapeGridPage.tsx";
 import GrainientPage from "./views/react-bits/grainient/GrainientPage.tsx";
+import GlitterWrap from "./views/Originkit/glitter-wrap/glitter-wrap.tsx";
 
 export default function App() {
   return (
@@ -43,6 +44,7 @@ export default function App() {
       <Route path="/fincash" element={<Fincash />} />
       <Route path="/shapegrid" element={<ShapeGridPage />} />
       <Route path="/grainient" element={<GrainientPage />} />
+      <Route path="/glitterwrap" element={<GlitterWrap />} />
     </Routes>
   );
 }
